@@ -1,0 +1,169 @@
+% \DocumentMetadata{
+% pdfstandard={UA-2,A-4f},
+% tagging=on,
+% lang=en,
+% tagging-setup=
+% 	{math/setup=mathml-SE,
+% 	extra-modules=verbatim-alt}
+% }   % default set-up as of 2025-06-10
+\documentclass[11pt]{article}
+
+% METADATA
+
+\title{TBD}
+\author{Christopher H. Eliot}
+\date{\today}
+
+\usepackage{hyperref}
+\hypersetup{
+pdftitle={TBD},
+pdfauthor={Christopher H. Eliot},
+pdfkeywords={},
+pdflang={en-US}
+}
+
+% LAYOUT
+
+\usepackage[driver=luatex,letterpaper,margin=1.5in]{geometry}
+\usepackage{fancyhdr} \pagestyle{plain} \fancyhead{} 
+\fancyhead[R]{\textsc{Draft of \today}}
+
+% TODO: Add header/footer formatting ↑
+
+% TODO: Consider adding \usepackage{ifdraft} and then making a header date "Draft of date" info line contingent on the whole being a draft. But check LaTeX Companion about this.
+
+\usepackage{ragged2e}
+\usepackage{widows-and-orphans}
+	 \WaOsetup{avoid-all}
+% \usepackage{microtype}
+
+% TYPOGRAPHY
+
+\usepackage{fontspec}
+\setmainfont{Adobe Caslon Pro}[ItalicFont = ACaslonPro-Italic.otf,
+			 BoldFont       = ACaslonPro-Semibold.otf,
+			 BoldItalicFont = ACaslonPro-SemiboldItalic.otf]
+\setsansfont{Gotham}[Upright = Gotham-Light.otf, 
+			 ItalicFont     = Gotham-LightItalic.otf, 
+			 BoldFont       = Gotham-Bold.otf, 
+			 BoldItalicFont = Gotham-BoldItalic.otf]
+\setmonofont{Fira Mono}
+\usepackage[american,provide*=*]{babel}
+
+% FORMAT
+
+\usepackage[chicago]{ellipsis}  % adjusts spacing around \dots
+\usepackage{csquotes}           % loads text quotation macros
+\usepackage{extdash}            % loads \Emdash and \--- macros
+% \usepackage{embrac}             % ensures upright parentheses
+
+% OPTIONAL
+
+% \usepackage{enumitem} % uncomment to use lists
+% \usepackage{graphicx} % uncomment to use figures
+% \usepackage{tabularx} % uncomment to use tables (or use {tabulary})
+% \usepackage{booktabs} % uncomment to use tables
+% \usepackage{siunitx}  % uncomment to use automatic units
+
+% CITATIONS
+
+% \usepackage[authordate,backend=biber]{biblatex-chicago}
+
+\usepackage[authordate,backend=biber,isbn=true,doi=onlynd,dashed=false,bibencoding=inputenc,cmsdate=both,compresspages=true,maxbibnames=7,refsection=section]{biblatex-chicago}
+
+\setlength{\leftskip}{-2em}
+
+%\usepackage[tiny]{titlesec}
+\usepackage{sectsty}
+\allsectionsfont{\large} 
+
+% \usepackage[hyphens]{url}
+
+\addbibresource{aibib.bib}
+
+\newcommand\readings[1]{\nocite{#1} \par \printbibliography[heading=none] }
+
+\usepackage{indentfirst}
+
+\begin{document}
+
+% \RaggedRight
+\thispagestyle{empty}
+
+\begin{center}
+\large{\textbf{Artificial Intelligence, Ethics, and Society}} \\ \medskip \normalsize{a course outline (C.~Eliot, 15 July 2025)}
+\end{center}
+
+\bigskip
+\noindent Each main topic will normally have a theoretical text and an example case. At this stage, the listed readings are preliminary. 
+
+\section{Artificial “intelligence”?}
+
+\emph{A brief history of AI; the main varieties of AI}
+
+\medskip
+ \emph{What does “intelligence” mean? In what sense are AIs intelligent?}
+ 
+
+\section{Introduction to value theory}
+
+ \emph{Major approaches to reasoning about rightness and wrongness, goodness and badness}
+
+\section{Data integration, surveillance, and privacy}
+\readings{macnish2012,creel2022privacy,mittelstadt2016}
+
+\section{Opacity and responsibility}
+\readings{Creel_2020,Vaassen2022}
+% \emph{What aspects of AI activity are unobservable? Who is responsible when unobservable, autonomous processes yield objectionable products or effects?}
+
+
+\section{Bias in decision systems}
+\readings{creel2022algorithmic,dressel2018accuracy}
+
+
+\section{Behavior manipulation}
+\readings{Ienca2023,Tarsney2025}
+
+
+
+\section{Autonomous systems, autonomous weapons}
+\readings{muller2016auto,muller2016risks}
+
+
+\section{Existential risks of super-intelligences}
+\readings{Sparrow2024,chalmers2016}
+
+
+\section{Sentience and the criteria for moral status of non-human agents}
+%  \emph{What are the criteria for being morally considerable or having rights? Are there any of them that could apply to AIs?}
+\readings{gunkel2018other}
+
+
+\section{Intellectual property}
+\readings{Nawar2024,Cunningham2025}
+
+
+\section{Labor, employment, and agency}
+\readings{Waelen2025}
+
+
+\section{Slop, fakes, deepfakes, and trust}
+\readings{Rini2020,Sahebi2025}
+
+
+
+
+\section{Impact of AI on human relations and on interpersonal ethics} 
+
+	% \emph{How might AIs affect how human beings relate to one another?}
+
+\readings{vallor2024,Sahebi2024}
+
+\section{Impacts of AI on our environment}
+
+\readings{moyano2024}
+
+
+
+
+\end{document}
