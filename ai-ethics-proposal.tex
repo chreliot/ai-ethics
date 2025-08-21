@@ -1,0 +1,381 @@
+% \DocumentMetadata{
+% pdfstandard={UA-2,A-4f},
+% tagging=on,
+% lang=en,
+% tagging-setup=
+  % {math/setup=mathml-SE,
+  % extra-modules=verbatim-alt}
+% }   % default set-up as of 2025-06-10
+\documentclass[11pt]{article}
+
+%%%%%%%%%%%%%
+% VARIABLES %
+%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%
+% HEAD MATTER %
+%%%%%%%%%%%%%%%
+
+%%% SET DATES %%%
+
+\usepackage[american]{datetime2}
+% \DTMsavedate{meetingdate}{2025-08-14}
+% \DTMsavedate{minutesdate}{}
+
+%%% LOAD REQUIRED PACKAGES %%%
+
+\usepackage{hyperref}
+
+\hypersetup{
+pdftitle={AI Ethics Proposal},
+pdfauthor={Christopher Eliot},
+pdfkeywords={Hofstra, philosophy, course proposal},
+pdflang={English},
+linktocpage=true
+}
+
+\usepackage[shortlabels]{enumitem} 
+
+\usepackage{ragged2e}
+\usepackage{widows-and-orphans}
+   \WaOsetup{avoid-all}
+
+
+% TYPOGRAPHY
+
+\usepackage{fontspec}
+\setmainfont{Adobe Caslon Pro}[ItalicFont = ACaslonPro-Italic.otf,
+       BoldFont       = ACaslonPro-Semibold.otf,
+       BoldItalicFont = ACaslonPro-SemiboldItalic.otf]
+\setsansfont{Gotham}[Upright = Gotham-Light.otf, 
+       ItalicFont     = Gotham-LightItalic.otf, 
+       BoldFont       = Gotham-Bold.otf, 
+       BoldItalicFont = Gotham-BoldItalic.otf]
+\setmonofont{Fira Mono}
+\usepackage[american,provide*=*]{babel}
+
+% \usepackage{microtype}
+
+\usepackage[ % requires LuaLaTeX
+  driver=luatex,
+  margin=1.4in
+]{geometry}
+
+\usepackage{fancyhdr} \pagestyle{fancy}
+\fancyhead{} \fancyhead[LE,RO]{AI Ethics draft proposal (\today)}
+
+\usepackage{sectsty}
+% \sectionfont{\normalsize}
+
+\usepackage[chicago]{ellipsis}  % adjusts spacing around \dots
+\usepackage{csquotes}           % loads text quotation macros
+\usepackage{extdash}            % loads \Emdash and \--- macros
+\usepackage{embrac}             % ensures upright parentheses
+
+
+%%%%%%%%%
+% WEEKS %
+%%%%%%%%%
+
+\newcounter{weeknumber}
+
+
+% DEFINE A COMMAND (TESTQ) THAT PUTS TEST QUESTIONS IN FANCY BOXES ON LINED SHEETS AND BREAKS PAGE
+
+\newcommand\weektitle[1]{\refstepcounter{weeknumber} \bigskip \noindent \large{\textbf{Week \theweeknumber{}:  #1}}  \normalsize} 
+
+% CITATIONS
+
+% \usepackage[authordate,backend=biber]{biblatex-chicago}
+
+\usepackage[authordate,backend=biber,isbn=true,doi=onlynd,dashed=false,bibencoding=inputenc,cmsdate=both,compresspages=true,maxbibnames=7,refsection=section]{biblatex-chicago}
+
+\setlength{\leftskip}{-2em}
+
+%\usepackage[tiny]{titlesec}
+\usepackage{sectsty}
+\allsectionsfont{\large} 
+
+% \usepackage[hyphens]{url}
+
+\addbibresource{aibib.bib}
+
+\newcommand\readings[1]{\nocite{#1} \par \printbibliography[heading=none] }
+
+\usepackage{indentfirst}
+
+
+
+%%%%%%%%
+% BODY %
+%%%%%%%%
+
+\begin{document}
+
+\thispagestyle{empty}
+
+%%%%%%%%%
+% TITLE %
+%%%%%%%%%
+
+\begin{center}
+  \textbf{\Large Artificial Intelligence in Society: \\ New Challenges, Ethical Futures} \\ \smallskip (Draft of \today, for AI Literacy Working Group)
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+% COURSE DESCRIPTION %
+%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Course description}
+
+\noindent Emerging artificial intelligence technologies create new challenges for traditional ideas about human ethics. By exploring how artificial intelligence creates specific problems, students learn to think about possible solutions. They do that by learning traditional ways of thinking about ideas like right action, goodness, personal character, rights and responsibilities, and fairness and justice. They observe how these ideas interact with artificial intelligence in specific Cases, and they practice logical reasoning about what to do with AI using those concepts. They explore where our society might need new ethical ideas, and they think about how to build a promising future society that includes AI.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% LEARNING OBJECTIVES %
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Learning objectives}
+
+\subsubsection*{Content-specific learning objectives}
+
+\begin{itemize}[noitemsep]
+  \item Students learn how major ethical concepts are defined and supported by 
+investigating how emerging technologies exemplify traditional ethical challenges.
+  \item Students recognize new, possible challenges to what we value arising from current and possible artificial intelligence.
+  \item Students develop familiarity with the terrain of arguments and counter-arguments about the value and threats of artificial intelligence.
+  \item Students develop ideas about ethical, beneficial, and sustainable use of and relationships to artificial intelligence. 
+\end{itemize}    
+
+\subsubsection*{Learning objectives for Philosophy courses}
+
+\begin{itemize}[noitemsep]
+      \item    Objective 1a: Students give accurate and relevant answers, complete with supporting details, to specific questions about philosophical ideas relevant to the course.
+     \item    Objective 1b: Students give accurate accounts of philosophical ideas relevant to the course in the context of criticizing or assessing those ideas.
+     \item    Objective 2a: Students speculate, in well-informed, well-supported, and plausible fashion, about what a given philosopher would say about a novel issue or problem.
+     \item    Objective 2b: Students extrapolate creatively and plausibly from their knowledge of philosophers or philosophical positions in developing their own related ideas.
+     \item    Objective 3a: Students write paragraphs that exhibit clarity, focus, a good command of the subject matter, and an orderly development of ideas.
+     \item Objective 3b: Students write multi-paragraph pieces that exhibit clarity, focus, a good command of the subject matter and an ability to work with that subject matter creatively, and an orderly development of ideas both within and across paragraphs.
+     \item    Objective 4a: Students speak in clear, focused, well-informed, and orderly fashion.
+     \item    Objective 5a: Students state arguments accurately and clearly, and identify strengths and weaknesses of different arguments.
+     \item    Objective 5b: Students develop and defend their own arguments, taking into account a variety of philosophical positions but adding original insights or emphases.
+     \item    Objective 7a: Students explain difficult passages clearly, accurately, and thoroughly.
+     \item    Objective 7b: Students use apt quotations and creative, critical, plausible readings of texts in their writing.
+     \item    Objective 8a: Students are able to explain the weaknesses of their own present positions, and the strengths of competing positions.
+     \item    Objective 8b: Students are able to explain why their pre-theoretical commitments have or have not changed as a result of what they have learned in the course, and if they have changed how they have done so. 
+  \end{itemize} 
+	  
+
+%%%%%%%%%%%%%%%%%
+% WEEKLY TOPICS %
+%%%%%%%%%%%%%%%%%
+
+\section*{Weekly topics}
+
+\weektitle{What do we mean by “artificial intelligence”?}
+
+\begin{itemize}[noitemsep]
+  \item A brief history of AI; the main varieties of AI
+  \item What does “intelligence” mean? In what sense are AIs intelligent?
+\end{itemize}	  
+
+
+\weektitle{Introduction to ethics and value theory}
+
+\begin{itemize}[noitemsep]
+\item Major approaches to reasoning about rightness and wrongness, goodness and badness: (a) consequentialist approaches, (b) right action approaches, (c) character approaches, (d) justice and fairness approaches
+\end{itemize}
+
+\weektitle{Privacy and big data sets}
+
+\begin{itemize}[noitemsep]
+  \item Ways of thinking about the value of privacy
+  \item Case: high school student data collection
+  \item Case: automated surveillance 
+\end{itemize}	  
+
+
+% % \readings{macnish2012,creel2022privacy,mittelstadt2016}
+
+\weektitle{Responsibility when AI reasoning is hidden}
+
+\begin{itemize}[noitemsep]
+\item Ways of thinking about responsibility
+  \item What aspects of AI activity are unobservable, even to the creators?
+  \item  How do we think about responsibility when unobservable processes yield objectionable results?
+\end{itemize}	  
+
+% % \readings{Creel_2020,Vaassen2022}
+% \emph{What aspects of AI activity are unobservable? Who is responsible when unobservable, autonomous processes yield objectionable products or effects?}
+
+\weektitle{Self-controlled systems}
+% \readings{muller2016auto,muller2016risks}
+
+\begin{itemize}[noitemsep]
+  \item Case: are self-driving cars safer or a menace?
+  \item Case: do armed robots battles save soldiers' lives? 
+  \item Case: AI out of control
+\end{itemize}	  
+
+\weektitle{Automated decision-making, fairness and bias}
+% \readings{creel2022algorithmic,dressel2018accuracy}
+
+\begin{itemize}[noitemsep]
+  \item Ways of thinking about fairness and avoiding bias
+  \item How can AI systems introduce biases?
+  \item Case: automated student admissions
+  \item Case: bail hearings and automated assessment of recidivism probability 
+\end{itemize}
+
+\weektitle{AIs manipulating and deceiving people}
+% \readings{Ienca2023,Tarsney2025}
+
+\begin{itemize}[noitemsep]
+  \item Ways of thinking about the problems with manipulation and deception
+  \item Case: AI systems evading our cognitive defenses
+  \item Measures for avoiding AI deception and manipulation
+\end{itemize}	  
+
+\weektitle{Should we create or ban super-intelligences?}
+
+\begin{itemize}[noitemsep]
+  \item What are the risks and benefits of independent, super-human intelligences?
+  \item Examples of technology and research bans and their histories
+\end{itemize}	  
+
+% \readings{Sparrow2024,chalmers2016}
+
+
+\weektitle{What would give an AI rights?}
+%  \emph{What are the criteria for being morally considerable or having rights? Are there any of them that could apply to AIs?}
+% \readings{gunkel2018other}
+
+\begin{itemize}[noitemsep]
+  \item What are the criteria for being morally considerable?
+  \item What would a robot or AI need to do to earn rights in our society?
+\end{itemize}	  
+
+\weektitle{How does AI challenge authorship and intellectual property?}
+% \readings{Nawar2024,Cunningham2025}
+
+\begin{itemize}[noitemsep]
+  \item Approaches to creators' rights in ethics and law
+  \item Case: training large language models on text and images
+  \item Case: original works produced by generative AI
+\end{itemize}	  
+
+\weektitle{How might AI change labor and employment}
+% \readings{Waelen2025}
+
+\begin{itemize}[noitemsep]
+  \item Ways of thinking about rights, and possibility of a right to work
+  \item Arguments for automating work as the key to the future
+  \item Case: industries being replaced by automation   
+\end{itemize}	  
+
+\weektitle{How AI changes communication: slop, fakes, deepfakes, and trust}
+% \readings{Rini2020,Sahebi2025}
+
+\begin{itemize}[noitemsep]
+  \item Ways of thinking about the moral significance of trust in communication
+  \item Ways of thinking about freedom of speech and expression
+  \item Case: news slop
+  \item Case: political deepfakes
+\end{itemize}	  
+
+\weektitle{Should we work to preserve our humanity in a world with AI?}
+
+\begin{itemize}[noitemsep]
+  \item Ways of thinking about justice, agency, and dignity
+  \item What are possible challenges to global justice from AI?
+  \item Does AI offer ways to rethink our human potential?
+\end{itemize}	  
+
+\weektitle{AI and our environment}
+
+\begin{itemize}[noitemsep]
+  \item Why would we ever care about our environment? — main arguments
+  \item Kinds of environmental risks of AI activity and power consumption
+  \item AI in the service of environmental preservation
+  \item Visions of sustainable AI   
+\end{itemize}	  
+
+\newpage
+
+\begin{center}
+  \textbf{\Large Sources}
+\end{center}  
+
+\bigskip
+
+\section{Artificial “intelligence”?}
+
+\emph{A brief history of AI; the main varieties of AI}
+
+\medskip
+ \emph{What does “intelligence” mean? In what sense are AIs intelligent?}
+ 
+
+\section{Introduction to value theory}
+
+ \emph{Major approaches to reasoning about rightness and wrongness, goodness and badness}
+
+\section{Data integration, surveillance, and privacy}
+\readings{macnish2012,creel2022privacy,mittelstadt2016}
+
+\section{Opacity and responsibility}
+\readings{Creel_2020,Vaassen2022}
+% \emph{What aspects of AI activity are unobservable? Who is responsible when unobservable, autonomous processes yield objectionable products or effects?}
+
+
+\section{Bias in decision systems}
+\readings{creel2022algorithmic,dressel2018accuracy}
+
+
+\section{Behavior manipulation}
+\readings{Ienca2023,Tarsney2025}
+
+
+
+\section{Autonomous systems, autonomous weapons}
+\readings{muller2016auto,muller2016risks}
+
+
+\section{Existential risks of super-intelligences}
+\readings{Sparrow2024,chalmers2016}
+
+
+\section{Sentience and the criteria for moral status of non-human agents}
+%  \emph{What are the criteria for being morally considerable or having rights? Are there any of them that could apply to AIs?}
+\readings{gunkel2018other}
+
+
+\section{Intellectual property}
+\readings{Nawar2024,Cunningham2025}
+
+
+\section{Labor, employment, and agency}
+\readings{Waelen2025}
+
+
+\section{Slop, fakes, deepfakes, and trust}
+\readings{Rini2020,Sahebi2025}
+
+
+
+
+\section{Impact of AI on human relations and on interpersonal ethics} 
+
+  % \emph{How might AIs affect how human beings relate to one another?}
+
+\readings{vallor2024,Sahebi2024}
+
+\section{Impacts of AI on our environment}
+
+\readings{moyano2024}
+
+
+
+\end{document}
