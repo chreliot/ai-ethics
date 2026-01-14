@@ -1,12 +1,7 @@
 \DocumentMetadata{
-% pdfstandard={UA-2,A-4f},
 tagging=on,
 lang=en,
-% tagging-setup=
-  % {math/setup=mathml-SE,
-  % extra-modules=verbatim-alt}
-}   % default set-up as of 2025-06-10
-
+}  
 \documentclass[11pt]{article}
 
 %%%%%%%%%%%%%
@@ -71,6 +66,7 @@ linktocpage=true
 \usepackage{fancyhdr} \pagestyle{fancy}
 \fancyhead{} \fancyhead[LE,RO]{\emph{AI Ethics reading list}}
 \renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
 
 % \sectionfont{\normalsize}
 
@@ -86,9 +82,7 @@ linktocpage=true
 
 \newcounter{weeknumber}
 
-
-% DEFINE A COMMAND \weektitle that uses a counter to enumerate weeks
-
+%% Define a command “\weektitle” that uses the \weeknumber counter to auto-number weekly section headings
 \newcommand\weektitle[1]{\refstepcounter{weeknumber} \bigskip \noindent \large{\textbf{Week \theweeknumber{}:  #1}}  \normalsize \bigskip} 
 
 % CITATIONS
@@ -107,6 +101,7 @@ linktocpage=true
 
 \addbibresource{aibib.bib}
 
+%% Define a command “\readings” that prints a bibliography for the section (especially, for one week) with no heading
 \newcommand\readings[1]{\begin{refsection}\nocite{#1}\printbibliography[heading=none]\end{refsection}}
 
 \usepackage{indentfirst}
@@ -243,6 +238,7 @@ linktocpage=true
 
 \begin{itemize}[nosep, label=\textbullet]
   \item What are the criteria for being morally considerable?
+  \item Ways of thinking about rights
   \item What would a robot or AI need to do to earn rights in our society?
 \end{itemize}	  
 
@@ -259,11 +255,11 @@ linktocpage=true
 
 \readings{Nawar2024,Cunningham2025}
 
-\weektitle{How might AI change labor and employment}
+\weektitle{How might AI change labor and employment?}
 % \readings{Waelen2025}
 
 \begin{itemize}[nosep, label=\textbullet]
-  \item Ways of thinking about rights, and possibility of a right to work
+  \item Arguments about the possibility of a right to work
   \item Arguments for automating work as the key to the future
   \item Case: industries being replaced by automation   
 \end{itemize}	  
@@ -296,7 +292,7 @@ linktocpage=true
 \weektitle{AI and our environment}
 
 \begin{itemize}[nosep, label=\textbullet]
-  \item Why would we ever care about our environment?
+  \item Why would we care about our environment?
   \item Kinds of environmental risks of AI activity
   \item AI in the service of environmental preservation
   \item Visions of sustainable AI   
