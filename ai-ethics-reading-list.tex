@@ -1,0 +1,305 @@
+\DocumentMetadata{
+tagging=on,
+lang=en,
+}  
+\documentclass[11pt]{article}
+
+%%%%%%%%%%%%%
+% VARIABLES %
+%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%
+% HEAD MATTER %
+%%%%%%%%%%%%%%%
+
+%%% SET DATES %%%
+
+\usepackage[american]{datetime2}
+% \DTMsavedate{meetingdate}{2025-08-14}
+% \DTMsavedate{minutesdate}{}
+
+%%% LOAD REQUIRED PACKAGES %%%
+
+\usepackage{hyperref}
+
+\hypersetup{
+pdftitle={AI Ethics Proposal},
+pdfauthor={Christopher Eliot},
+pdfkeywords={Hofstra, philosophy, course proposal},
+% pdflang={English},
+linktocpage=true
+}
+
+\usepackage[shortlabels]{enumitem} 
+\setlist{nosep,topset=11pt}
+\setlist[1]{labelindent=\parindent}
+
+
+
+\usepackage{ragged2e}
+\usepackage{widows-and-orphans}
+   \WaOsetup{avoid-all}
+
+\usepackage{unicode-math}
+
+% TYPOGRAPHY
+
+\usepackage{fontspec}
+\setmainfont{Adobe Caslon Pro}[ItalicFont = ACaslonPro-Italic.otf,
+       BoldFont       = ACaslonPro-Semibold.otf,
+       BoldItalicFont = ACaslonPro-SemiboldItalic.otf]
+\setsansfont{Gotham}[Upright = Gotham-Light.otf, 
+       ItalicFont     = Gotham-LightItalic.otf, 
+       BoldFont       = Gotham-Bold.otf, 
+       BoldItalicFont = Gotham-BoldItalic.otf]
+\setmonofont{Fira Mono}
+\usepackage[american,provide*=*]{babel}
+
+% \usepackage{microtype}
+
+\usepackage[ % requires LuaLaTeX
+  driver=luatex,
+  margin=1.4in
+]{geometry}
+
+\usepackage{fancyhdr} \pagestyle{fancy}
+\fancyhead{} \fancyhead[LE,RO]{\emph{AI Ethics reading list}}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+
+% \sectionfont{\normalsize}
+
+\usepackage[chicago]{ellipsis}  % adjusts spacing around \dots
+\usepackage{csquotes}           % loads text quotation macros
+\usepackage{extdash}            % loads \Emdash and \--- macros
+\usepackage[biblatex=true]{embrac}
+
+
+%%%%%%%%%
+% WEEKS %
+%%%%%%%%%
+
+\newcounter{weeknumber}
+
+%% Define a command “\weektitle” that uses the \weeknumber counter to auto-number weekly section headings
+\newcommand\weektitle[1]{\refstepcounter{weeknumber} \bigskip \noindent \large{\textbf{Week \theweeknumber{}:  #1}}  \normalsize \bigskip} 
+
+% CITATIONS
+
+% \usepackage[authordate,backend=biber]{biblatex-chicago}
+
+\usepackage[authordate,backend=biber,isbn=true,doi=onlynd,dashed=false,bibencoding=inputenc,cmsdate=both,compresspages=true,maxbibnames=7]{biblatex-chicago}
+
+\setlength{\leftskip}{-2em}
+
+%\usepackage[tiny]{titlesec}
+%  \usepackage{sectsty}
+% \allsectionsfont{\large} 
+
+% \usepackage[hyphens]{url}
+
+\addbibresource{aibib.bib}
+
+%% Define a command “\readings” that prints a bibliography for the section (especially, for one week) with no heading
+\newcommand\readings[1]{\begin{refsection}\nocite{#1}\printbibliography[heading=none]\end{refsection}}
+
+\usepackage{indentfirst}
+
+
+
+%%%%%%%%
+% BODY %
+%%%%%%%%
+
+\begin{document}
+
+\thispagestyle{empty}
+
+%%%%%%%%%
+% TITLE %
+%%%%%%%%%
+
+\begin{center}
+  \textbf{\Large Reading List}
+\end{center}
+
+
+%%%%%%%%%%%
+% PREFACE %
+%%%%%%%%%%%
+
+
+
+\noindent The following are the topics, questions, and sources of the readings linked from the course's Canvas site. Many of the reading assignments are brief, targeted excerpts from articles for which the full citations follow. Many of the readings are available by direct link through Hofstra Library (requiring a Hofstra login) or on the open web. For the remainder, the files are posted to Canvas.
+
+%%%%%%%%%%%%%%%%%
+% WEEKLY TOPICS %
+%%%%%%%%%%%%%%%%%
+
+
+% \subsection*{Weekly topics}
+
+\vspace{1cm}
+\setlength{\parskip}{-11pt}
+
+\weektitle{What do we mean by “artificial intelligence”?}
+
+\begin{itemize}[nosep, label=\textbullet]
+  \item A brief history of AI; the main varieties of AI
+  \item What does “intelligence” mean? In what sense are AIs intelligent (and not)?
+\end{itemize}	  
+\readings{sep-ai}
+
+\weektitle{Introduction to ethics and value theory}
+
+\begin{itemize}[nosep, label=\textbullet]
+\item Major approaches to reasoning about rightness and wrongness, goodness and badness: (a) consequentialist approaches, (b) right-action approaches, (c) character approaches, (d) justice and fairness approaches
+\end{itemize}
+\readings{Blackburn2001}
+
+\weektitle{Privacy and big data sets}
+
+\begin{itemize}[nosep, label=\textbullet]
+  \item Ways of thinking about the value of privacy
+  \item Case: high school student data collection
+  \item Case: automated surveillance 
+\end{itemize}	  
+
+\readings{macnish2012,creel2022privacy,mittelstadt2016}
+
+
+% % \readings{macnish2012,creel2022privacy,mittelstadt2016}
+
+\weektitle{Responsibility when AI reasoning is hidden}
+
+\begin{itemize}[nosep, label=\textbullet]
+\item Ways of thinking about responsibility
+  \item What aspects of AI activity are unobservable, even to the creators?
+  \item  How do we think about responsibility when unobservable processes yield objectionable results?
+\end{itemize}	  
+
+\readings{Creel_2020,Vaassen2022}
+
+% % \readings{Creel_2020,Vaassen2022}
+% \emph{What aspects of AI activity are unobservable? Who is responsible when unobservable, autonomous processes yield objectionable products or effects?}
+
+\weektitle{Self-controlled systems}
+% \readings{muller2016auto,muller2016risks}
+
+\begin{itemize}[nosep, label=\textbullet]
+  \item Case: Are self-driving cars safer or a menace?
+  \item Case: Do armed-robot battles save soldiers' lives? 
+  \item Case: AI out of control
+\end{itemize}	  
+
+
+\readings{muller2016auto,muller2016risks}
+
+\weektitle{Automated decision-making, fairness and bias}
+% \readings{creel2022algorithmic,dressel2018accuracy}
+
+\begin{itemize}[nosep, label=\textbullet]
+  \item Ways of thinking about fairness and avoiding bias
+  \item How can AI systems introduce biases?
+  \item Case: automated student admissions
+  \item Case: bail hearings and automated assessment of recidivism probability 
+\end{itemize}
+
+\readings{creel2022algorithmic,dressel2018accuracy}
+
+
+\weektitle{AIs manipulating and deceiving people}
+% \readings{Ienca2023,Tarsney2025}
+
+\begin{itemize}[nosep, label=\textbullet]
+  \item Ways of thinking about the problems with manipulation and deception
+  \item Case: AI systems evading our cognitive defenses
+  \item Measures for avoiding AI deception and manipulation
+\end{itemize}	  
+
+\readings{Ienca2023,Tarsney2025}
+
+\weektitle{Should we create or ban super-intelligences?}
+
+\begin{itemize}[nosep, label=\textbullet]
+  \item What are the risks and benefits of independent, super-human intelligences?
+  \item Examples of technology and research bans and their histories
+\end{itemize}	  
+
+\readings{Sparrow2024,chalmers2016}
+
+% \readings{Sparrow2024,chalmers2016}
+
+
+\weektitle{What would give an AI rights?}
+%  \emph{What are the criteria for being morally considerable or having rights? Are there any of them that could apply to AIs?}
+% \readings{gunkel2018other}
+
+\begin{itemize}[nosep, label=\textbullet]
+  \item What are the criteria for being morally considerable?
+  \item Ways of thinking about rights
+  \item What would a robot or AI need to do to earn rights in our society?
+\end{itemize}	  
+
+\readings{gunkel2018other}
+
+\weektitle{How does AI challenge authorship and intellectual property?}
+% \readings{Nawar2024,Cunningham2025}
+
+\begin{itemize}[nosep, label=\textbullet]
+  \item Approaches to creators' rights in ethics and law
+  \item Case: training large language models on text and images
+  \item Case: original works produced by generative AI
+\end{itemize}	  
+
+\readings{Nawar2024,Cunningham2025}
+
+\weektitle{How might AI change labor and employment?}
+% \readings{Waelen2025}
+
+\begin{itemize}[nosep, label=\textbullet]
+  \item Arguments about the possibility of a right to work
+  \item Arguments for automating work as the key to the future
+  \item Case: industries being replaced by automation   
+\end{itemize}	  
+
+\readings{Waelen2025}
+
+\weektitle{How AI changes communication: slop, fakes, deepfakes, and trust}
+% \readings{Rini2020,Sahebi2025}
+
+\begin{itemize}[nosep, label=\textbullet]
+  \item Ways of thinking about the moral significance of trust in communication
+  \item Ways of thinking about freedom of speech and expression
+  \item Case: news slop
+  \item Case: political deepfakes
+\end{itemize}	  
+
+\readings{Rini2020,Sahebi2025}
+
+
+\weektitle{Should we work to preserve our humanity in a world with AI?}
+
+\begin{itemize}[nosep, label=\textbullet]
+  \item Ways of thinking about justice, agency, and dignity
+  \item What are possible challenges to global justice from AI?
+  \item Does AI offer ways to rethink our human potential?
+\end{itemize}	  
+
+\readings{vallor2024,Sahebi2024}
+
+\weektitle{AI and our environment}
+
+\begin{itemize}[nosep, label=\textbullet]
+  \item Why would we care about our environment?
+  \item Kinds of environmental risks of AI activity
+  \item AI in the service of environmental preservation
+  \item Visions of sustainable AI   
+\end{itemize}	  
+
+\readings{moyano2024}
+
+
+
+\end{document}

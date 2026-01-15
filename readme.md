@@ -1,0 +1,1 @@
+# planning documents for AI ethics/society course
